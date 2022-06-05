@@ -4,15 +4,16 @@ interface objectSection {
 }
 
 export interface bookModel {
-  id?: number;
-  title?: string;
-  category_id?:number;
-  authors?:[];
-  cover_url?:string;
-  description?:string;
-  sections?: objectSection;
-  audio_length?:number;
+  id: number;
+  title: string;
+  category_id:number;
+  authors:[];
+  cover_url:string;
+  description:string;
+  sections: objectSection;
+  audio_length:number;
   map?:any;
+  findIndex?:any
 
  
 }

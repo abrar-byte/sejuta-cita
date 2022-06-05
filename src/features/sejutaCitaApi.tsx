@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { bookModel } from "../../models/bookModel";
-import { categoryModel } from "../../models/categoryModel";
+import { bookModel } from "../models/bookModel";
+import { categoryModel } from "../models/categoryModel";
 export interface CategoriesResponse {
   error?: string;
   success: boolean;
@@ -17,7 +17,7 @@ export interface BooksResponse {
   map?:any
 }
 export const corsDisable="https://cors-anywhere.herokuapp.com/"
-export const baseUrl = `${corsDisable}https://asia-southeast2-sejutacita-app.cloudfunctions.net`
+export const baseUrl = `https://asia-southeast2-sejutacita-app.cloudfunctions.net`
 export const sejutaCitaApi = createApi({
   reducerPath: "sejutaCitaApi",
   baseQuery: fetchBaseQuery({ baseUrl }),
@@ -30,9 +30,7 @@ export const sejutaCitaApi = createApi({
     }),
     getAllBooks:builder.query<BooksResponse, number | void>({
       query: (categoryId) => `/fee-assessment-books?categoryId=${categoryId}`,
-    })
- 
- 
+    }) 
   }),
 });
 export const {

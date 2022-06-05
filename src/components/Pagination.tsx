@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react'
-import { useGetAllBooksQuery } from '../features/categories/sejutaCitaApi';
+import { useGetAllBooksQuery } from '../features/sejutaCitaApi';
 
 
 interface PaginationProps {
@@ -18,11 +18,11 @@ const{data:allBook}=useGetAllBooksQuery(category)
 
 
   return (
-    <div className='flex justify-center items-center'>
-       <div className="intro-y col-span-12 flex just flex-wrap sm:flex-row sm:flex-nowrap items-center">
-            <nav className="w-full sm:w-auto sm:mr-auto">
-              <ul className="pagination">
-                <li className="page-item flex items-center">
+    <div className='flex items-center py-5'>
+       <div className="flex w-full justify-between px-2 md:justify-center flex-wrap  items-center">
+            <nav>
+              <ul className="">
+                <li className="flex items-center">
                   <ChevronLeft
                     onClick={() => offset > 0 && setOffset(offset - 1)}
                     className="cursor-pointer text-3xl hover:text-primary mr-2"
@@ -38,7 +38,7 @@ const{data:allBook}=useGetAllBooksQuery(category)
                         <button
                           className={`${
                             pageNumber === item
-                              ? "rounded-md bg-white text-black"
+                              ? "rounded-md bg-gray-200 text-blue-500"
                               : "text-black hover:text-primary ml-2"
                           } mx-1 px-3 py-1 ${id > 3 - 1 ? "hidden" : ""}`}
                           onClick={() => setPageNumber(item)}
@@ -58,10 +58,9 @@ const{data:allBook}=useGetAllBooksQuery(category)
                 </li>
               </ul>
             </nav>
-            {/* {Array.from(Array(10).keys())} */}
             <select
               onChange={(e:any) => setPageSize(e.target.value)}
-              className="w-20 form-select box mt-3 sm:mt-0 border-slate-300	rounded-md"
+              className="w-20 form-select box mt-3 sm:mt-0 h-8 border-slate-300	rounded-md"
             >
               {pageList.map((item, index) => (
                 <option value={item} selected={pageSize === item}>
