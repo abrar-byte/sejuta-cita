@@ -49,3 +49,5 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 Install moesif cors to resolve backend cors 
 https://chrome.google.com/webstore/detail/moesif-origin-cors-change/digfbfaphojjndkpccljibejjbppifbc?hl=id
+
+or you can use cors anywhere which I put in a millionCitaApi.tsx
